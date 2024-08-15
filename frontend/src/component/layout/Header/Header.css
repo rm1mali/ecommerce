@@ -1,0 +1,94 @@
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-menu.expanded {
+    display: flex;
+  }
+} 
+
+/* src/components/Header.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-container .logo {
+  height: 60px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.nav-links li a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: rgba(35, 35, 35, 0.8);
+  font-size: 1.3vmax;
+}
+
+.nav-links li a:hover {
+  color: #eb4034;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-flow: column nowrap;
+    background-color: white;
+    position: fixed;
+    transform: translateX(100%);
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3.5rem;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    z-index: 9; /* Ensure the menu is above other content */
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-links li {
+    margin: 25px 0;
+  }
+}
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top: 3vmax;
+}
+
+.speedDialIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
